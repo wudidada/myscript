@@ -12,6 +12,6 @@ deploy_staging:
     name: staging
     url: example.com
   script:
-    - ssh jiangzhibin@192.168.4.125 "cd ~/scrapy_projects/spidermanager && git checkout master && git pull origin master && exit"
+    - ssh -o StrictHostKeyChecking=no jiangzhibin@192.168.4.125 "cd ~/scrapy_projects/spidermanager && git checkout master && git pull origin master && exit"
   only:
     - master
