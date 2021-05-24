@@ -1,6 +1,4 @@
 before_script:
-  - apt-get update -qq
-  - apt-get install -qq git
   # Setup SSH deploy keys
   - 'which ssh-agent || ( apt-get install -qq openssh-client )'
   - eval $(ssh-agent -s)
@@ -14,6 +12,6 @@ deploy_staging:
     name: staging
     url: example.com
   script:
-    - ssh jiangzhibin@47.56.137.146 "cd ~/myscript && git checkout master && git pull origin master && exit"
+    - ssh jiangzhibin@192.168.4.125 "cd ~/myscript && git checkout master && git pull origin master && exit"
   only:
     - master
