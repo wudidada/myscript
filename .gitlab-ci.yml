@@ -1,17 +1,17 @@
-before_script:
-  # Setup SSH deploy keys
-  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$SSH_PRIVATE_KEY")
-  - mkdir -p ~/.ssh
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+# before_script:
+#   # Setup SSH deploy keys
+#   - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+#   - eval $(ssh-agent -s)
+#   - ssh-add <(echo "$SSH_PRIVATE_KEY")
+#   - mkdir -p ~/.ssh
+#   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     
-deploy_staging:
-  type: deploy
-  environment:
-    name: staging
-    url: example.com
-  script:
-    - ssh -o StrictHostKeyChecking=no jiangzhibin@192.168.4.125 "cd ~/scrapy_projects/spidermanager && git checkout master && git pull origin master && exit"
-  only:
-    - master
+# deploy_staging:
+#   type: deploy
+#   environment:
+#     name: staging
+#     url: example.com
+#   script:
+#     - ssh -o StrictHostKeyChecking=no jiangzhibin@192.168.4.125 "cd ~/scrapy_projects/spidermanager && git checkout master && git pull origin master && exit"
+#   only:
+#     - master
