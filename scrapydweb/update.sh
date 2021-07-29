@@ -6,4 +6,4 @@ cd ~/scrapydweb/bin || (echo "scrapydweb directory not exists." && exit)
 cd ~/scrapy_projects/spidermanager || (echo "spider project not exists." && exit)
 git pull
 
-python3 -m pip install -r ~/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+python3 -m pip install -r ~/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
